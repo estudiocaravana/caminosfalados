@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [x-cloak] {
+    display: none !important;
+  }
+  html {
+    @apply scroll-smooth antialiased;
+  }
+  body {
+    @apply font-sans text-xl leading-normal font-medium text-amber-950;
+  }
+  .caixa {
+    @apply max-w-screen-2xl mx-auto px-6 sm:px-12 xl:px-20;
+  }
+  h1, h2, h3 {
+    @apply text-black font-extrabold;
+  }
+  p {
+    @apply pt-5;
+  }
+  p > strong {
+    @apply font-extrabold text-sky-500;
+  }
+  .sombra {
+    @apply shadow-lg shadow-sky-800/30;
+  }
+}
+@layer components {
+    .swiper-button-next::after {
+    display: none;
+    }
+    .swiper-button-prev::after {
+    display: none;
+    }
+} 
