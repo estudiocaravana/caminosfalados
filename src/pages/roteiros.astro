@@ -3,5 +3,31 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
-  <div class="caixa">roteiros</div>
+  <div class="caixa">
+    <div class="flex *:flex-1 text-center">
+      <div class="border-b-4 border-red-500 text-red-500 py-12">
+        <a href="#">Roteiro global</a>
+      </div>
+      <div class="border-b-4 border-black py-12">
+        <a href="#">Roteiro global</a>
+      </div>
+      <div class="border-b-4 border-black py-12">
+        <a href="#">Roteiro global</a>
+      </div>
+    </div>
+  </div>
+  <div class="caixa">
+    <div class="flex items-center gap-20">
+      <div class="flex-1">
+        <h1 class="text-5xl">Roteiro global</h1>
+        <p>
+          Benvidas, benvidos e benvides ao paseo Ruth e o Leviatán, organizado polo Concello de Santiago con motivo dos cen anos da primeira visita da fotógrafa
+          norteamericana Ruth Matilda Anderson á Galiza e a Compostela. Estas son as doce localizacións que nos serven para seguir os seus pasos pola cidade.
+        </p>
+      </div>
+      <div class="flex-1">
+        <img src="/mapa.webp" alt="" />
+      </div>
+    </div>
+  </div>
 </Layout>

@@ -1,3 +1,25 @@
-<div class="caixa border-t-4 border-black py-20 mt-60">
-  <img class="max-w-xs" src="/logo_arua.webp" alt="" />
+<div class="caixa max-w-none mt-60">
+  <div class="flex gap-20 border-t-4 border-black py-20">
+    <div>
+      <img class="max-w-xs" src="/logo_arua.webp" alt="" />
+    </div>
+    <div class="flex-1">
+      <div>
+        Idéa <a href="#" class="text-red-500">Concello da Rúa</a><br />
+        Produción <a href="#" class="text-red-500">A muller forzuda</a><br />
+        Deseño <a href="#" class="text-red-500">estudiocaravana</a>
+      </div>
+      <ul class="flex gap-6 mt-12">
+        <li><a href="/roteiros" class="text-red-500">Aviso legal</a></li>
+        <li><a href="/historia" class="text-red-500">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <button x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="fill-none stroke-[2px] stroke-current size-12" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 6L12 2L16 6"> </path><path d="M12 2V22"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>

@@ -3,5 +3,84 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
-  <div class="caixa">historia</div>
+  <!-- migas -->
+  <div class="caixa mt-12">
+    <ul class="flex gap-1">
+      <li><a href="/">Inicio</a> /</li>
+      <li><a href="#">Historias</a> /</li>
+      <li>Muller que mira sobre fondo desgastado</li>
+    </ul>
+  </div>
+  <!-- Single -->
+  <div class="caixa mt-36">
+    <!-- imagen destacada -->
+    <div class="px-20 relative">
+      <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300"></div>
+      <div class="relative">
+        <img src="/fotos/ella.jpg" class="block -mt-12" alt="ella" />
+        <small class="pt-6 pb-9 block text-black">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
+      </div>
+    </div>
+    <!-- Titular -->
+    <div class="flex gap-20">
+      <div class="w-80"></div>
+      <div class="py-20 flex-1">
+        <h2 class="text-5xl leading-snug max-w-xl">Muller que mira sobre fondo desgastado</h2>
+        <div class="max-w-3xl text-2xl">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis.
+            Odit consectetur recusandae tempora est aliquid ipsam nulla laborum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- cuerpo -->
+    <div class="flex gap-20 pb-36">
+      <!-- Sidebar -->
+      <div class="w-80 pt-5 text-sm">
+        <strong class="block">Bibliografía:</strong>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit numquam, laboriosam similique adipisci nam omnis placeat vitae, ab quae quam, rerum aut
+          accusantium inventore amet consequuntur libero quisquam est quasi?
+        </p>
+        <strong class="block mt-12">Ligazóns:</strong>
+        <p>
+          <a href="#" class="underline ring-offset-4 block mb-3">Lorem ipsum dolor sit amet</a>
+          <a href="#" class="underline ring-offset-4 block mb-3">Odit numquam</a>
+        </p>
+      </div>
+      <!-- Principal -->
+      <div class="flex-1">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam placeat, laudantium cupiditate possimus explicabo corporis iste blanditiis, aut
+          impedit veniam beatae vel fugiat esse quae pariatur, ullam labore nam qui! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugit odit
+          iure nisi odio repellat itaque, sed minima earum praesentium, esse fuga, repudiandae maxime nihil. Hic ab quis commodi dolores.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis. Odit
+          consectetur recusandae tempora est aliquid ipsam nulla laborum ad reprehenderit error.
+        </p>
+        <figure class="mt-12 mb-9 px-6 relative">
+          <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300"></div>
+          <div class="relative">
+            <img src="/fotos/el.jpg" alt="ella" />
+            <small class="py-6 block text-amber-950">Home pasando por diante. 2024 - Anónimo</small>
+          </div>
+        </figure>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam placeat, laudantium cupiditate possimus explicabo corporis iste blanditiis, aut
+          impedit veniam beatae vel fugiat esse quae pariatur, ullam labore nam qui! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugit odit
+          iure nisi odio repellat itaque, sed minima earum praesentium, esse fuga, repudiandae maxime nihil. Hic ab quis commodi dolores.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam placeat, laudantium cupiditate possimus explicabo corporis iste blanditiis, aut
+          impedit veniam beatae vel fugiat esse quae pariatur, ullam labore nam qui!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugit odit iure nisi odio repellat itaque, sed minima earum praesentium, esse fuga,
+          repudiandae maxime nihil. Hic ab quis commodi dolores.
+        </p>
+      </div>
+    </div>
+  </div>
 </Layout>

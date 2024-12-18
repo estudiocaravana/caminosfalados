@@ -27,6 +27,9 @@
   .sombra {
     @apply shadow-lg shadow-sky-800/30;
   }
+  a, button {
+    @apply transition-all duration-500;
+  }
 }
 @layer components {
     .swiper-button-next::after {

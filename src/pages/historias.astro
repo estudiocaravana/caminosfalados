@@ -3,24 +3,6 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
-  <!-- Hero -->
-  <div class="caixa mt-36">
-    <div class="flex items-center">
-      <!-- Presentación -->
-      <div class="flex-1">
-        <h1 class="text-5xl">Presentación</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente cumque
-          eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
-        </p>
-      </div>
-      <!-- Imagen -->
-      <div class="flex-1">
-        <div class="aspect-oro w-96 rounded-full bg-amber-200 mx-auto"></div>
-      </div>
-    </div>
-  </div>
-
   <!-- Historias -->
   <div class="caixa mt-60 bg-black">
     <div class="flex gap-20">
@@ -45,5 +27,33 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </div>
     </div>
+  </div>
+  <!-- dupla -->
+  <div class="flex gap-20">
+    <div class="flex-1">
+      <div class="caixa mt-60 bg-black">
+        <div class="pb-20">
+          <img src="/fotos/ella.jpg" class="-mt-12" alt="ella" />
+          <small class="text-amber-100 mt-6 block">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
+        </div>
+        <div class="flex-1">
+          <div class="py-20 pr-20 text-amber-100">
+            <h2 class="text-5xl leading-snug text-amber-100">Muller que mira sobre fondo desgastado</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis.
+              Odit consectetur recusandae tempora est aliquid ipsam nulla laborum ad reprehenderit error.
+            </p>
+          </div>
+          <a href="/historia" class="px-20 bg-amber-300 py-12 -mr-20 flex gap-3 hover:gap-6 items-center">
+            <div>Seguir lendo</div>
+            <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8L22 12L18 16"></path>
+              <path d="M2 12H22"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1"></div>
   </div>
 </Layout>
