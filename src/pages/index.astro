@@ -4,19 +4,26 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout titulo="titulo" metadescripcion="descripcion">
   <!-- Hero -->
-  <div class="caixa mt-36">
+  <div class="caixa mt-24">
     <div class="flex items-center">
       <!-- Presentación -->
       <div class="flex-1">
-        <h1 class="text-5xl">Presentación</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente cumque
-          eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
-        </p>
+        <div class="pr-12">
+          <h1 class="text-5xl max-w-lg leading-snug">Lorem ipsum dolor</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
+            cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
+          </p>
+          <div>
+            <a class="block mt-12 p-6 text-center bg-amber-300 max-w-sm" href="/colabora">Colabora con nos</a>
+          </div>
+        </div>
       </div>
       <!-- Imagen -->
       <div class="flex-1">
-        <div class="aspect-oro w-96 rounded-full bg-amber-200 mx-auto"></div>
+        <div class="mx-auto w-fit">
+          <img src="/hero.png" alt="" class="mx-auto" />
+        </div>
       </div>
     </div>
   </div>
@@ -44,6 +51,14 @@ import Layout from "../layouts/Layout.astro";
           </svg>
         </a>
       </div>
+    </div>
+  </div>
+
+  <!-- Mapas -->
+  <div class="caixa mt-60">
+    <div class="flex">
+      <div class="flex-1"></div>
+      <div class="flex-1"></div>
     </div>
   </div>
 </Layout>
