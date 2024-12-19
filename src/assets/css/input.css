@@ -30,6 +30,9 @@
   a, button {
     @apply transition-all duration-500;
   }
+  input.colabora, textarea.colabora {
+    @apply bg-amber-100 block p-6 mt-3 mb-6 w-full placeholder:text-blue-400 border-none placeholder:text-xl;
+  }
 }
 @layer components {
     .swiper-button-next::after {

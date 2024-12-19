@@ -1,5 +1,4 @@
 import Alpine from 'alpinejs'
- 
-export default (Alpine: any) => {
-    Alpine
-}
+// npm install @alpinejs/collapse
+import collapse from '@alpinejs/collapse'
+Alpine.plugin(collapse)

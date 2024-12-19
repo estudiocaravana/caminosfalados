@@ -1,21 +1,24 @@
 ---
+import Parada from "../components/parada.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
+  <!-- Selector de roteiro -->
   <div class="caixa">
     <div class="flex *:flex-1 text-center">
       <div class="border-b-4 border-red-500 text-red-500 py-12">
         <a href="#">Roteiro global</a>
       </div>
       <div class="border-b-4 border-black py-12">
-        <a href="#">Roteiro global</a>
+        <a href="#">Roteiro 2</a>
       </div>
       <div class="border-b-4 border-black py-12">
-        <a href="#">Roteiro global</a>
+        <a href="#">Roteiro 3</a>
       </div>
     </div>
   </div>
+  <!-- hero roteiro -->
   <div class="caixa">
     <div class="flex items-center gap-20">
       <div class="flex-1">
@@ -28,6 +31,19 @@ import Layout from "../layouts/Layout.astro";
       <div class="flex-1">
         <img src="/mapa.webp" alt="" />
       </div>
+    </div>
+  </div>
+  <!-- Paradas -->
+  <Parada tit="Praza de Fuenterrabía" num="1" />
+  <Parada tit="Cantón do Toural" num="2" />
+  <Parada tit="Tras San Fiz de Solovio" num="3" />
+  <Parada tit="Praza de Abastos" num="4" />
+  <Parada tit="Rúa das Casas Reais" num="5" />
+  <Parada tit="Praza da Quintana" num="6" />
+  <!-- Colabora -->
+  <div class="caixa">
+    <div class="border-t-4 border-black py-12">
+      Tes algunha parada máis en mente? <a href="/colabora" class="font-bold underline ring-offset-4">Colabora</a>
     </div>
   </div>
 </Layout>

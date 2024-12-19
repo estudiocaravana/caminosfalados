@@ -1,0 +1,41 @@
+---
+import "swiper/css";
+---
+
+<div>
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div>
+          <img src="/fotos/ella.jpg" alt="Muller sobre fondo" />
+          <small>Muller sobre fondo</small>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div>
+          <img src="/fotos/el.jpg" alt="" />
+          <small>Home pasando. 2024</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  // modulos:
+  import { Navigation } from "swiper/modules";
+  // init Swiper:
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation],
+    slidesPerView: 1.6,
+    spaceBetween: 32,
+    mousewheel: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
