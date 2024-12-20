@@ -10,7 +10,7 @@
     @apply scroll-smooth antialiased;
   }
   body {
-    @apply font-sans text-xl leading-normal font-medium text-amber-950;
+    @apply font-sans text-base leading-relaxed sm:text-xl sm:leading-normal font-medium text-amber-950;
   }
   .caixa {
     @apply max-w-screen-2xl mx-auto px-6 sm:px-12 xl:px-20;
@@ -32,6 +32,9 @@
   }
   input.colabora, textarea.colabora {
     @apply bg-amber-100 block p-6 mt-3 mb-6 w-full placeholder:text-blue-400 border-none placeholder:text-xl;
+  }
+  .dupla {
+    @apply flex flex-col xl:flex-row gap-20;
   }
 }
 @layer components {

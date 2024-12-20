@@ -1,18 +1,35 @@
+---
+import Menu from "./menu.astro";
+---
+
 <div class="caixa max-w-none">
-  <div class="flex border-b-4 border-black py-6 items-center">
+  <div class="flex border-b-4 border-black py-6 lg:items-center">
     <div class="flex-1">
-      <a href="/" class="font-extrabold text-2xl text-black">
-        Camiños Falados <span class="text-red-500">da Rúa</span>
+      <a href="/" class="font-extrabold text-xl sm:text-2xl text-black">
+        Camiños Falados<br class="lg:hidden" />
+        <span class="text-red-500">da Rúa</span>
       </a>
     </div>
-    <div>
+    <div class="hidden lg:block">
       <ul class="flex gap-6">
         <li><a href="/historia">Historias</a></li>
         <li><a href="/roteiros">Roteiros</a></li>
       </ul>
     </div>
-    <div class="flex-1">
+    <div class="hidden lg:block flex-1">
       <a class="py-6 px-12 bg-amber-300 block ml-auto max-w-60 text-center" href="/colabora">Colabora</a>
+    </div>
+    <div class="lg:hidden">
+      <div x-data="{menu : false}">
+        <button class="flex items-center gap-2 relative" @click="menu = true">
+          <svg class="size-12 fill-none stroke-2 stroke-current" viewBox="0 0 24 24">
+            <path d="M17 6.1H3"> </path>
+            <path d="M21 12.1H3"></path>
+            <path d="M15.1 18H3"></path>
+          </svg>
+        </button>
+        <Menu />
+      </div>
     </div>
   </div>
 </div>

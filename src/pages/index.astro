@@ -5,11 +5,11 @@ import Layout from "../layouts/Layout.astro";
 <Layout titulo="titulo" metadescripcion="descripcion">
   <!-- Hero -->
   <div class="caixa mt-24">
-    <div class="flex items-center">
+    <div class="dupla xl:gap-0 items-center">
       <!-- Presentación -->
       <div class="flex-1">
         <div class="pr-12">
-          <h1 class="text-5xl max-w-xl leading-snug">Unha viaxe pola memoria e os lugares</h1>
+          <h1 class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl">Unha viaxe pola memoria e os lugares</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
             cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
@@ -28,10 +28,13 @@ import Layout from "../layouts/Layout.astro";
               <path d="M2 12H22"></path>
             </svg>
           </a>
+          <a href="/roteiros" class="block xl:hidden max-w-xs py-6 w-full text-center text-black bg-amber-300 mt-16 shadow-lg shadow-amber-800/30"
+            >Colabora co proxecto</a
+          >
         </div>
       </div>
       <!-- Imagen -->
-      <div class="flex-1">
+      <div class="flex-1 order-first xl:order-none">
         <div class="mx-auto w-fit">
           <img src="/hero.png" alt="" class="mx-auto" />
         </div>
@@ -41,14 +44,14 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Historias -->
   <div class="caixa mt-60 bg-black">
-    <div class="flex gap-20">
-      <div class="flex-1 pb-20">
+    <div class="dupla gap-6 xl:gap-20">
+      <div class="flex-1 xl:pb-20">
         <img src="/fotos/ella.jpg" class="-mt-12" alt="ella" />
         <small class="text-amber-100 mt-6 block">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
       </div>
       <div class="flex-1">
-        <div class="py-20 pr-20 text-amber-100">
-          <h2 class="text-5xl leading-snug text-amber-100">Muller que mira sobre fondo desgastado</h2>
+        <div class="pb-20 xl:py-20 max-w-xl text-amber-100">
+          <h2 class="text-3xl leading-snug sm:text-5xl sm:leading-snug text-amber-100">Muller que mira sobre fondo desgastado</h2>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis.
             Odit consectetur recusandae tempora est aliquid ipsam nulla laborum ad reprehenderit error.
@@ -66,18 +69,18 @@ import Layout from "../layouts/Layout.astro";
   </div>
 
   <!-- Roteiros -->
-  <div class="caixa mt-60">
-    <div class="flex items-center gap-20">
+  <div class="caixa mt-36 xl:mt-60">
+    <div class="dupla gap-0 xl:gap-20 items-center">
       <!-- Presentación -->
       <div class="flex-1">
         <div>
-          <h1 class="text-5xl max-w-xl leading-snug">Roteiros</h1>
+          <h1 class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl">Roteiros</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
             cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
           </p>
           <div>
-            <a class="mt-12 py-6 border-b-4 border-black max-w-sm flex gap-3 hover:gap-6 items-center" href="/roteiros">
+            <a class="mt-12 py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center" href="/roteiros">
               <div>Ver os roteiros</div>
               <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 8L22 12L18 16"></path>
@@ -88,7 +91,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <!-- Imagen -->
-      <div class="flex-1">
+      <div class="flex-1 order-first xl:order-none">
         <div class="mx-auto w-fit">
           <img src="/experimento.webp" alt="" />
         </div>
