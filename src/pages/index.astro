@@ -9,14 +9,25 @@ import Layout from "../layouts/Layout.astro";
       <!-- Presentación -->
       <div class="flex-1">
         <div class="pr-12">
-          <h1 class="text-5xl max-w-lg leading-snug">Lorem ipsum dolor</h1>
+          <h1 class="text-5xl max-w-xl leading-snug">Unha viaxe pola memoria e os lugares</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
             cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
           </p>
-          <div>
-            <a class="block mt-12 p-6 text-center bg-amber-300 max-w-sm" href="/colabora">Colabora con nos</a>
-          </div>
+          <a class="mt-12 py-6 border-b-4 border-black max-w-sm flex gap-3 hover:gap-6 items-center" href="/roteiros">
+            <div>Ler as historias</div>
+            <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8L22 12L18 16"></path>
+              <path d="M2 12H22"></path>
+            </svg>
+          </a>
+          <a class="py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center" href="/roteiros">
+            <div>Ver os roteiros</div>
+            <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8L22 12L18 16"></path>
+              <path d="M2 12H22"></path>
+            </svg>
+          </a>
         </div>
       </div>
       <!-- Imagen -->
@@ -54,11 +65,34 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 
-  <!-- Mapas -->
+  <!-- Roteiros -->
   <div class="caixa mt-60">
-    <div class="flex">
-      <div class="flex-1"></div>
-      <div class="flex-1"></div>
+    <div class="flex items-center gap-20">
+      <!-- Presentación -->
+      <div class="flex-1">
+        <div>
+          <h1 class="text-5xl max-w-xl leading-snug">Roteiros</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
+            cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
+          </p>
+          <div>
+            <a class="mt-12 py-6 border-b-4 border-black max-w-sm flex gap-3 hover:gap-6 items-center" href="/roteiros">
+              <div>Ver os roteiros</div>
+              <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8L22 12L18 16"></path>
+                <path d="M2 12H22"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Imagen -->
+      <div class="flex-1">
+        <div class="mx-auto w-fit">
+          <img src="/experimento.webp" alt="" />
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
