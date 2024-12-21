@@ -6,26 +6,26 @@ import Layout from "../layouts/Layout.astro";
   <!-- migas -->
   <div class="caixa mt-12">
     <ul class="flex gap-1">
-      <li><a href="/">Inicio</a> /</li>
-      <li><a href="#">Historias</a> /</li>
-      <li>Muller que mira sobre fondo desgastado</li>
+      <li><a href="/">Portada</a></li>
+      <li>/ <a href="#">Historias</a></li>
+      <li class="hidden lg:block">/ Muller que mira sobre fondo desgastado</li>
     </ul>
   </div>
   <!-- Single -->
   <div class="caixa mt-36">
     <!-- imagen destacada -->
-    <div class="px-20 relative">
+    <div class="px-6 xl:px-20 relative">
       <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300"></div>
       <div class="relative">
         <img src="/fotos/ella.jpg" class="block -mt-12" alt="ella" />
-        <small class="pt-6 pb-9 block text-black">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
+        <small class="pt-5 pb-6 xl:pt-4 xl:pb-12 block text-black">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
       </div>
     </div>
     <!-- Titular -->
-    <div class="flex gap-20">
+    <div class="flex flex-col xl:flex-row gap-20">
       <div class="w-80"></div>
-      <div class="py-20 flex-1">
-        <h2 class="text-5xl leading-snug max-w-xl">Muller que mira sobre fondo desgastado</h2>
+      <div class="pb-12 xl:pb-20 xl:py-20 flex-1">
+        <h2 class="text-4xl leading-tight sm:text-5xl sm:leading-snug max-w-xl">Muller que mira sobre fondo desgastado</h2>
         <div class="max-w-3xl text-2xl">
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis.
@@ -35,7 +35,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <!-- cuerpo -->
-    <div class="flex gap-20 pb-36">
+    <div class="flex flex-col xl:flex-row gap-12 xl:gap-20 pb-36">
       <!-- Sidebar -->
       <div class="w-80 pt-5 text-sm">
         <strong class="block">Bibliografía:</strong>
@@ -50,7 +50,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
       <!-- Principal -->
-      <div class="flex-1">
+      <div class="flex-1 order-first xl:order-none">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam placeat, laudantium cupiditate possimus explicabo corporis iste blanditiis, aut
           impedit veniam beatae vel fugiat esse quae pariatur, ullam labore nam qui! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugit odit
@@ -64,7 +64,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300"></div>
           <div class="relative">
             <img src="/fotos/el.jpg" alt="ella" />
-            <small class="py-6 block text-amber-950">Home pasando por diante. 2024 - Anónimo</small>
+            <small class="pt-5 pb-6 block text-amber-950">Home pasando por diante. 2024 - Anónimo</small>
           </div>
         </figure>
         <p>

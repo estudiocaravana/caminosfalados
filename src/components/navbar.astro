@@ -3,7 +3,7 @@ import Menu from "./menu.astro";
 ---
 
 <div class="caixa max-w-none">
-  <div class="flex border-b-4 border-black py-6 lg:items-center">
+  <div class="flex border-b-4 border-black py-6 items-center">
     <div class="flex-1">
       <a href="/" class="font-extrabold text-xl sm:text-2xl text-black">
         Camiños Falados<br class="lg:hidden" />
@@ -23,9 +23,7 @@ import Menu from "./menu.astro";
       <div x-data="{menu : false}">
         <button class="flex items-center gap-2 relative" @click="menu = true">
           <svg class="size-12 fill-none stroke-2 stroke-current" viewBox="0 0 24 24">
-            <path d="M17 6.1H3"> </path>
-            <path d="M21 12.1H3"></path>
-            <path d="M15.1 18H3"></path>
+            <circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
           </svg>
         </button>
         <Menu />

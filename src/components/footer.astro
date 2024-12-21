@@ -1,19 +1,22 @@
 <div class="caixa max-w-none mt-60">
-  <div class="flex gap-20 border-t-4 border-black py-20">
+  <div class="flex flex-col lg:flex-row gap-20 border-t-4 border-black py-20 text-center lg:text-left">
+    <!-- Logo -->
     <div>
-      <img class="max-w-xs" src="/logo_arua.webp" alt="" />
+      <img class="max-w-xs mx-auto lg:mx-0" src="/logo_arua.webp" alt="" />
     </div>
+    <!-- Peine -->
     <div class="flex-1">
       <div>
         Idéa <a href="#" class="text-red-500">Concello da Rúa</a><br />
         Produción <a href="#" class="text-red-500">A muller forzuda</a><br />
         Deseño <a href="#" class="text-red-500">estudiocaravana</a>
       </div>
-      <ul class="flex gap-6 mt-12">
+      <ul class="flex justify-center lg:justify-normal gap-6 mt-12">
         <li><a href="/roteiros" class="underline underline-offset-4">Aviso legal</a></li>
         <li><a href="/historia" class="underline underline-offset-4">Política de privacidade</a></li>
       </ul>
     </div>
+    <!-- Ir arriba -->
     <div>
       <button x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
         <svg class="fill-none stroke-[2.5px] stroke-current size-10" viewBox="0 0 24 24">

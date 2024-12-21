@@ -13,10 +13,13 @@
     @apply font-sans text-base leading-relaxed sm:text-xl sm:leading-normal font-medium text-amber-950;
   }
   .caixa {
-    @apply max-w-screen-2xl mx-auto px-6 sm:px-12 xl:px-20;
+    @apply max-w-screen-md xl:max-w-screen-2xl mx-auto px-6 sm:px-12 xl:px-20;
   }
   h1, h2, h3 {
     @apply text-black font-extrabold;
+  }
+  .h-45 {
+    @apply text-4xl leading-tight sm:text-5xl sm:leading-snug;
   }
   p {
     @apply pt-5;

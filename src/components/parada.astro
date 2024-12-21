@@ -10,16 +10,16 @@ const { tit, num } = Astro.props;
 <div class="caixa">
   <div class="border-t-4 border-black" x-data="{ expanded: false }">
     <!-- Banda -->
-    <div class="flex gap-20 py-12 items-center">
+    <div class="flex gap-6 xl:gap-20 py-12 items-center">
       <!-- Número -->
-      <div class="w-80 text-3xl font-extrabold cursor-pointer" @click="expanded = ! expanded">
+      <div class="xl:w-80 cursor-pointer" @click="expanded = ! expanded">
         <div class="size-12 rounded-full bg-amber-300 flex items-center justify-center ml-auto">
-          {num}
+          <span class="text-2xl font-extrabold">{num}</span>
         </div>
       </div>
       <!-- Títular -->
-      <div class="flex-1 text-3xl cursor-pointer" @click="expanded = ! expanded">
-        <h2>{tit}</h2>
+      <div class="flex-1 cursor-pointer" @click="expanded = ! expanded">
+        <h2 class="text-xl sm:text-2xl xl:text-3xl">{tit}</h2>
       </div>
       <div>
         <button @click="expanded = ! expanded">
@@ -29,6 +29,7 @@ const { tit, num } = Astro.props;
         </button>
       </div>
     </div>
+
     <!-- Contenido -->
     <div x-show="expanded" x-collapse>
       <!-- Slider -->
@@ -37,7 +38,7 @@ const { tit, num } = Astro.props;
       </div>
 
       <!-- sidebar y texto -->
-      <div class="flex gap-20 pt-12 pb-36">
+      <div class="flex flex-col xl:flex-row gap-6 xl:gap-20 pt-12 pb-36">
         <!-- Número -->
         <div class="w-80 pt-6">
           <strong class="block">+ info:</strong>
@@ -47,7 +48,7 @@ const { tit, num } = Astro.props;
           </p>
         </div>
         <!-- Títular -->
-        <div class="flex-1">
+        <div class="flex-1 order-first xl:order-none">
           <!-- Reproductor (si hay audio) -->
           <div class="bg-amber-300 px-12 py-6 mt-6 mb-12">
             <div class="flex items-center gap-6">
