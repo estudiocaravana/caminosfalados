@@ -47,7 +47,7 @@ const { roteiro } = Astro.props;
       </div>
       <div class="flex-1">
         <div class="relative my-12 overflow-hidden bg-amber-300 p-3">
-          <img src="/mapa.webp" alt="" />
+          <div id="map" style="height: 500px;"></div>
         </div>
       </div>
     </div>
@@ -68,3 +68,52 @@ const { roteiro } = Astro.props;
     </div>
   </div>
 </Layout>
+
+<script define:vars={{ roteiro }}>
+  paradasMap = roteiro.paradas;
+  console.log(paradasMap);
+</script>
+
+<script>
+  let map;
+
+  async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+    map = new Map(document.getElementById("map"), {
+      zoom: 6,
+      mapId: "roteiros",
+      mapTypeId: "satellite",
+    });
+
+    var bounds = new google.maps.LatLngBounds();
+
+    paradasMap.forEach((p, i) => {
+      const marcador = document.createElement("div");
+
+      marcador.className =
+        "size-6 rounded-full bg-amber-300 flex items-center justify-center ml-auto text-xs font-extrabold";
+      marcador.textContent = i + 1;
+
+      let marker = new AdvancedMarkerElement({
+        map: map,
+        position: {
+          lat: p.coordenadas.coordinates[1],
+          lng: p.coordenadas.coordinates[0],
+        },
+        title: p.titular,
+        content: marcador,
+      });
+
+      bounds.extend({
+        lat: p.coordenadas.coordinates[1],
+        lng: p.coordenadas.coordinates[0],
+      });
+    });
+
+    map.fitBounds(bounds);
+  }
+
+  initMap();
+</script>
