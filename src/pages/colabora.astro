@@ -9,8 +9,9 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="h-45">Colabora no proxecto</h1>
       <div class="max-w-2xl mx-auto">
         <p>
-          Benvidas, benvidos e benvides ao paseo Ruth e o Leviatán, organizado polo Concello de Santiago con motivo dos cen anos da primeira visita da fotógrafa
-          norteamericana Ruth Matilda Anderson á Galiza e a Compostela.
+          Camiños falados é unha plataforma para poñer en valor e difundir as memorias e lugares que conforman a identidade da Rúa, tanto da vila como das súas
+          parroquias. Participa enviando historias ou fotografías, tanto da vila como das parroquias. Tamén podes deixar o teu nome e email para que che
+          enviemos as novidades.
         </p>
       </div>
     </div>
@@ -34,12 +35,30 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div>Adxuntar arquivos (opcional)</div>
     </button>
+    <!-- Normas -->
+    <div id="normas" class="pt-12">
+      <h2>Normas de participación</h2>
+      <p>
+        Camiños Falados é unha plataforma promovida polo Concello da Rúa. As fotos e os datos que envíe serán analizados polo equipo do proxecto o cal
+        contactaralle para confirmar a entrada da información e, se fose necesario, contrastar detalles.
+      </p>
+      <p>
+        A información e fotografías proporcionadas poderán incorporarse a este proxecto e ser empregados noutras publicacións derivadas do mesmo. Nas
+        publicacións, sempre que sexa posible, indicarase a fonte do contido e a autoiría da imaxe. No caso de que as fotografías non teñan autor/a coñecido/a,
+        identificaranse co nome de quen a proporcione.
+      </p>
+    </div>
     <!-- acordo -->
     <label for="x" class="flex gap-3 items-center mt-16">
-      <input class="size-9 border-4 border-amber-100 bg-transparent" type="checkbox" name="legal" id="legal" />
-      Lin e acepto os <a href="/legal" class="underline underline-offset-4">Termos legais</a>
+      <input class="size-9 border-4 border-amber-100 bg-transparent" type="checkbox" name="normas" id="normas" />
+      Lin e acepto as <a href="#normas" class="underline underline-offset-4">Normas de participación</a>
+    </label>
+    <!-- acordo -->
+    <label for="x" class="flex gap-3 items-center mt-6">
+      <input class="size-9 border-4 border-amber-100 bg-transparent" type="checkbox" name="boletin" id="boletin" />
+      Quero recibir novidades por email
     </label>
     <!-- envío -->
-    <button class="bg-black p-8 text-center block w-full text-amber-100 mt-16">Enviar!</button>
+    <button class="bg-black p-8 text-center block w-full text-amber-100 mt-16 hover:bg-amber-900">Enviar!</button>
   </div>
 </Layout>
