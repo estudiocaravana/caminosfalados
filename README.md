@@ -1,48 +1,51 @@
-# Astro Starter Kit: Basics
+# Trabajar en local
 
-```sh
-npm create astro@latest -- --template basics
+La primera vez, ejecutar
+
+```bash
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Luego, ejecutar
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+netlify dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+# Hacer deploy si hay cambios en las functions
 
-## 🧞 Commands
+Para que funcione, por ahora estoy haciendo lo siguiente:
 
-All commands are run from the root of the project, from a terminal:
+1 - En una pestaña de la terminal, lanzo la versión de servidor de desarrollo con
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+netlify dev
+```
 
-## 👀 Want to learn more?
+para que funcionen las llamadas a las functions. Si no, al llamarlas desde el build dice que no funcionan
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2 - En otra pestaña de la terminal, hago un build del proyecto
+
+```bash
+netlify build
+```
+
+3 - En esa misma pestaña, hago una prueba del deploy
+
+```bash
+netlify deploy
+```
+
+4 - Si todo va bien, lo subo a producción
+
+```bash
+netlify deploy --prod
+```
+
+# Artículos interesantes
+
+https://www.netlify.com/blog/deploy-an-astro-site-with-forms-serverless-functions-and-redirects/
+
+https://www.netlify.com/blog/2021/07/23/build-a-modern-shopping-site-with-astro-and-serverless-functions/
+
+https://docs.directus.io/guides/headless-cms/trigger-static-builds/netlify.html#triggering-static-site-builds-with-netlify

@@ -1,0 +1,34 @@
+---
+import { leeItems } from "../../lib/ec";
+
+export async function getStaticPaths() {
+  let historias = await leeItems("historias");
+
+  console.log(historias);
+
+  return historias.map((h, i) => {
+    return {
+      params: { id: h.id.toString() },
+      props: { historia: h },
+    };
+  });
+}
+
+const { historia } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prueba {historia.titular}</title>
+  </head>
+  <body>
+    <div class="page-page">
+      <article>
+        {historia.titular}
+      </article>
+    </div>
+  </body>
+</html>
