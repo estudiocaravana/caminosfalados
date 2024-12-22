@@ -1,5 +1,10 @@
 ---
 import "swiper/css";
+
+interface Props {
+  galeria: number[];
+}
+const { galeria } = Astro.props;
 ---
 
 <div>
@@ -7,18 +12,21 @@ import "swiper/css";
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide">
-        <div>
-          <img src="/fotos/ella.jpg" alt="Muller sobre fondo" />
-          <small>Muller sobre fondo</small>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div>
-          <img src="/fotos/el.jpg" alt="" />
-          <small>Home pasando. 2024</small>
-        </div>
-      </div>
+      {
+        galeria.map((g, i) => {
+          const url =
+            "http://panel.camiñosfaladosdarua.gal/assets/" +
+            g.directus_files_id;
+          return (
+            <div class="swiper-slide">
+              <div>
+                <img src={url} alt="Muller sobre fondo" />
+                <small>Muller sobre fondo</small>
+              </div>
+            </div>
+          );
+        })
+      }
     </div>
   </div>
 </div>

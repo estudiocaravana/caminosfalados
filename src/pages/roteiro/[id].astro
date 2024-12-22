@@ -1,11 +1,21 @@
 ---
-import Parada from "../components/parada.astro";
-import Layout from "../layouts/Layout.astro";
+import Parada from "../../components/parada.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import { leeItems } from "../lib/ec";
+import { leeItems } from "../../lib/ec";
 
-let roteiros = await leeItems("roteiros");
-let roteiro = roteiros[0];
+export async function getStaticPaths() {
+  let roteiros = await leeItems("roteiros");
+
+  return roteiros.map((r, i) => {
+    return {
+      params: { id: r.id.toString() },
+      props: { roteiro: r },
+    };
+  });
+}
+
+const { roteiro } = Astro.props;
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
@@ -33,12 +43,7 @@ let roteiro = roteiros[0];
     <div class="flex flex-col xl:flex-row items-center gap-6 xl:gap-20">
       <div class="flex-1">
         <h1 class="h-45 mt-20 xl:mt-0">{roteiro.nome}</h1>
-        <p>
-          Benvidas ao paseo Ruth, organizado polo Concello de Santiago con
-          motivo dos cen anos da primeira visita da fotógrafa norteamericana
-          Ruth Matilda Anderson á Galiza e a Compostela. Estas son as doce
-          localizacións que nos serven para seguir os seus pasos pola cidade.
-        </p>
+        <div set:html={roteiro.descricion} />
       </div>
       <div class="flex-1">
         <div class="relative my-12 overflow-hidden bg-amber-300 p-3">
@@ -48,12 +53,11 @@ let roteiro = roteiros[0];
     </div>
   </div>
   <!-- Paradas -->
-  <Parada tit="Praza de Fuenterrabía" num="1" />
-  <Parada tit="Cantón do Toural" num="2" />
-  <Parada tit="Tras San Fiz de Solovio" num="3" />
-  <Parada tit="Praza de Abastos" num="4" />
-  <Parada tit="Rúa das Casas Reais" num="5" />
-  <Parada tit="Praza da Quintana" num="6" />
+  {
+    roteiro.paradas.map((p, i) => {
+      return <Parada parada={p} num={i + 1} />;
+    })
+  }
   <!-- Colabora -->
   <div class="caixa">
     <div class="border-t-4 border-black py-12">

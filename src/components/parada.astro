@@ -1,10 +1,10 @@
 ---
 import Slider from "./slider.astro";
 interface Props {
-  tit: string;
+  parada: any;
   num: string;
 }
-const { tit, num } = Astro.props;
+const { parada, num } = Astro.props;
 ---
 
 <div class="caixa">
@@ -13,17 +13,24 @@ const { tit, num } = Astro.props;
     <div class="flex gap-6 xl:gap-20 py-12 items-center">
       <!-- Número -->
       <div class="xl:w-80 cursor-pointer" @click="expanded = ! expanded">
-        <div class="size-12 rounded-full bg-amber-300 flex items-center justify-center ml-auto">
+        <div
+          class="size-12 rounded-full bg-amber-300 flex items-center justify-center ml-auto"
+        >
           <span class="text-2xl font-extrabold">{num}</span>
         </div>
       </div>
       <!-- Títular -->
       <div class="flex-1 cursor-pointer" @click="expanded = ! expanded">
-        <h2 class="text-xl sm:text-2xl xl:text-3xl">{tit}</h2>
+        <h2 class="text-xl sm:text-2xl xl:text-3xl">{parada.titular}</h2>
       </div>
       <div>
         <button @click="expanded = ! expanded">
-          <svg class="fill-none stroke-black stroke-2 size-9" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            class="fill-none stroke-black stroke-2 size-9"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="m6 9 6 6 6-6"></path>
           </svg>
         </button>
@@ -34,7 +41,7 @@ const { tit, num } = Astro.props;
     <div x-show="expanded" x-collapse>
       <!-- Slider -->
       <div>
-        <Slider />
+        <Slider galeria={parada.galeria} />
       </div>
 
       <!-- sidebar y texto -->
@@ -43,8 +50,19 @@ const { tit, num } = Astro.props;
         <div class="w-80 pt-6">
           <strong class="block">+ info:</strong>
           <p>
-            <a href="#" class="underline ring-offset-4 block mb-3">Lorem ipsum dolor sit amet</a>
-            <a href="#" class="underline ring-offset-4 block mb-3">Odit numquam</a>
+            {
+              parada.mais_info &&
+                parada.mais_info.map((m, i) => {
+                  return (
+                    <a
+                      href="{m.url}"
+                      class="underline ring-offset-4 block mb-3"
+                    >
+                      {m.texto}
+                    </a>
+                  );
+                })
+            }
           </p>
         </div>
         <!-- Títular -->
@@ -53,12 +71,22 @@ const { tit, num } = Astro.props;
           <div class="bg-amber-300 px-12 py-6 mt-6 mb-12">
             <div class="flex items-center gap-6">
               <div>
-                <svg class="fill-black stroke-black size-9" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  class="fill-black stroke-black size-9"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <polygon points="6 3 20 12 6 21 6 3"></polygon>
                 </svg>
               </div>
               <div>
-                <svg class="fill-none stroke-black size-20" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  class="fill-none stroke-black size-20"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path d="M2 10v3"></path>
                   <path d="M6 6v11"></path>
                   <path d="M10 3v18"></path>
@@ -73,18 +101,7 @@ const { tit, num } = Astro.props;
             </div>
           </div>
           <!-- Texto -->
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ducimus veniam dolores debitis commodi aliquid maxime ipsum, eligendi totam ullam
-            excepturi sunt, ut ea qui corrupti cumque consequatur architecto aperiam. Excepturi sunt, ut ea qui corrupti cumque consequatur architecto aperiam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, aut. Quidem minus nemo sed beatae mollitia ad pariatur molestiae, accusantium
-            neque recusandae porro? Deleniti officia facilis nulla eos obcaecati suscipit.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ducimus veniam dolores debitis commodi aliquid maxime ipsum, eligendi totam ullam
-            excepturi sunt, ut ea qui corrupti cumque consequatur architecto aperiam. Excepturi sunt, ut ea qui corrupti cumque consequatur architecto aperiam.
-          </p>
+          <div set:html={parada.texto} />
         </div>
       </div>
     </div>

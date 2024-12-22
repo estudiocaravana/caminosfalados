@@ -5,7 +5,7 @@ const obtenItems = async (nombreItems: string) => {
         console.log("--------------------------------");
         console.log("Obteniendo items de tipo " + nombreItems + "...");
         console.log("--------------------------------");
-        const result = await fetch(`${URL_DIRECTUS}/items/${nombreItems}`, {
+        const result = await fetch(`${URL_DIRECTUS}/items/${nombreItems}?fields=*.*.*`, {
             method: "GET",
             headers: {
             "Content-Type": "application/json",
