@@ -1,0 +1,111 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { leeItems } from "../../lib/ec";
+
+export async function getStaticPaths() {
+  let historias = await leeItems("historias");
+
+  return historias.map((h, i) => {
+    return {
+      params: { id: h.id.toString() },
+      props: { historia: h },
+    };
+  });
+}
+
+const { historia } = Astro.props;
+---
+
+<Layout titulo="titulo" metadescripcion="descripcion">
+  <!-- migas -->
+  <div class="caixa mt-12">
+    <ul class="flex gap-1">
+      <li><a href="/">Portada</a></li>
+      <li>/ <a href="/historia/1">Historias</a></li>
+      <li class="hidden lg:block">/ {historia.titular}</li>
+    </ul>
+  </div>
+  <!-- Single -->
+  <div class="caixa mt-36">
+    <!-- imagen destacada -->
+    <div class="px-6 xl:px-20 relative">
+      <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300"></div>
+      <div class="relative">
+        <img
+          src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
+          class="block -mt-12"
+          alt={historia.imaxe_destacada.title}
+        />
+        <small class="pt-5 pb-6 xl:pt-4 xl:pb-12 block text-black"
+          >{historia.imaxe_destacada.title}</small
+        >
+      </div>
+    </div>
+    <!-- Titular -->
+    <div class="flex flex-col xl:flex-row gap-20">
+      <div class="w-80"></div>
+      <div class="pb-12 xl:pb-20 xl:py-20 flex-1">
+        <h2 class="text-4xl leading-tight sm:text-5xl sm:leading-snug max-w-xl">
+          {historia.titular}
+        </h2>
+        <div class="max-w-3xl text-2xl">
+          <div set:html={historia.destacado} />
+        </div>
+      </div>
+    </div>
+    <!-- cuerpo -->
+    <div class="flex flex-col xl:flex-row gap-12 xl:gap-20 pb-36">
+      <!-- Sidebar -->
+      <div class="w-80 pt-5 text-sm">
+        {
+          historia.bibliografia ? (
+            <div>
+              <strong class="block">Bibliografía:</strong>
+              <div set:html={historia.bibliografia} />
+            </div>
+          ) : null
+        }
+        <strong class="block mt-12">Ligazóns:</strong>
+        <p>
+          <a href="#" class="underline ring-offset-4 block mb-3"
+            >Lorem ipsum dolor sit amet</a
+          >
+          <a href="#" class="underline ring-offset-4 block mb-3">Odit numquam</a
+          >
+        </p>
+      </div>
+      <!-- Principal -->
+      <div class="flex-1 order-first xl:order-none">
+        {
+          historia.contido &&
+            historia.contido.blocks.map((b, i) => {
+              let contenido;
+
+              switch (b.type) {
+                case "paragraph":
+                  contenido = "<p>" + b.data.text + "</p>";
+                  break;
+
+                case "image":
+                  let url =
+                    "http://panel.camiñosfaladosdarua.gal" + b.data.file.url;
+                  contenido = (
+                    <figure class="mt-12 mb-9 px-6 relative">
+                      <div class="absolute bottom-0 left-0 right-0 top-1/3 bg-amber-300" />
+                      <div class="relative">
+                        <img src={url} class="block" alt={b.data.caption} />
+                        <figcaption>{b.data.caption}</figcaption>
+                      </div>
+                    </figure>
+                  );
+                  break;
+              }
+
+              return <div set:html={contenido} />;
+            })
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

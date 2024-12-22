@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { leeItems } from "../lib/ec";
 
 let portada = await leeItems("portada");
+let historias = await leeItems("historias");
+let historia = historias[0];
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
@@ -12,28 +14,52 @@ let portada = await leeItems("portada");
       <!-- Presentación -->
       <div class="flex-1">
         <div class="xl:pr-12">
-          <h1 class="text-4xl leading-tight sm:text-5xl sm:leading-snug max-w-xl">
+          <h1
+            class="text-4xl leading-tight sm:text-5xl sm:leading-snug max-w-xl"
+          >
             <!-- {portada.titular} -->
             Camiños Falados<br /><span class="text-red-500">da Rúa</span>
           </h1>
-          <span class="font-bold block mt-3 text-red-500">Un percorrido pola memoria e os lugares</span>
+          <span class="font-bold block mt-3 text-red-500"
+            >Un percorrido pola memoria e os lugares</span
+          >
           <!-- Mostramos el contenido como html -->
           <div set:html={portada.contido} />
-          <a class="mt-6 py-6 border-b-4 border-black max-w-sm flex gap-3 hover:gap-6 items-center" href="/historia">
+          <a
+            class="mt-6 py-6 border-b-4 border-black max-w-sm flex gap-3 hover:gap-6 items-center"
+            href="/historia/1"
+          >
             <div>Ler as historias</div>
-            <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              class="fill-none stroke-current stroke-2 size-6"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M18 8L22 12L18 16"></path>
               <path d="M2 12H22"></path>
             </svg>
           </a>
-          <a class="py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center" href="/roteiros">
+          <a
+            class="py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center"
+            href="/roteiro/2"
+          >
             <div>Ver os roteiros</div>
-            <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              class="fill-none stroke-current stroke-2 size-6"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M18 8L22 12L18 16"></path>
               <path d="M2 12H22"></path>
             </svg>
           </a>
-          <a href="/roteiros" class="block lg:hidden max-w-xs py-6 w-full text-center text-black bg-amber-300 mt-16">Colabora co proxecto</a>
+          <a
+            href="/roteiros"
+            class="block lg:hidden max-w-xs py-6 w-full text-center text-black bg-amber-300 mt-16"
+            >Colabora co proxecto</a
+          >
         </div>
       </div>
       <!-- Imagen -->
@@ -50,20 +76,35 @@ let portada = await leeItems("portada");
   <div class="caixa mt-60 bg-black">
     <div class="dupla gap-12 xl:gap-20">
       <div class="flex-1 xl:pb-20">
-        <img src="/fotos/ella.jpg" class="-mt-12" alt="ella" />
-        <small class="text-amber-100 mt-6 block">Muller que mira sobre fondo desgastado. 2024 - Anónimo</small>
+        <img
+          src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
+          class="-mt-12"
+          alt={historia.imaxe_destacada.title}
+        />
+        <small class="text-amber-100 mt-6 block"
+          >{historia.imaxe_destacada.title}</small
+        >
       </div>
       <div class="flex-1">
         <div class="pb-20 xl:py-20 text-amber-100">
-          <h2 class="text-4xl leading-snug sm:text-5xl sm:leading-snug text-amber-100">Muller que mira sobre fondo desgastado</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam alias temporibus corrupti maiores quia perferendis cupiditate blanditiis.
-            Odit consectetur recusandae tempora est aliquid ipsam nulla laborum ad reprehenderit error.
-          </p>
+          <h2
+            class="text-4xl leading-snug sm:text-5xl sm:leading-snug text-amber-100"
+          >
+            {historia.titular}
+          </h2>
+          <div set:html={historia.destacado} />
         </div>
-        <a href="/historia" class="px-20 bg-amber-300 py-12 flex gap-3 hover:gap-6 items-center">
+        <a
+          href={`/historia/${historia.id}`}
+          class="px-20 bg-amber-300 py-12 flex gap-3 hover:gap-6 items-center"
+        >
           <div>Seguir lendo</div>
-          <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            class="fill-none stroke-current stroke-2 size-6"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M18 8L22 12L18 16"></path>
             <path d="M2 12H22"></path>
           </svg>
@@ -78,15 +119,26 @@ let portada = await leeItems("portada");
       <!-- Presentación -->
       <div class="flex-1">
         <div>
-          <h1 class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl">Roteiros</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis iure recusandae voluptate animi quas atque fugit molestias itaque, sapiente
-            cumque eaque et cupiditate fugiat odio repudiandae ratione nobis. Maiores.
-          </p>
+          <h1
+            class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl"
+          >
+            Roteiros
+          </h1>
+
+          <div set:html={portada.explicacion_roteiros} />
+
           <div>
-            <a class="mt-12 py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center" href="/roteiros">
+            <a
+              class="mt-12 py-6 border-b-4 border-black max-w-xs flex gap-3 hover:gap-6 items-center"
+              href="/roteiro/2"
+            >
               <div>Ver os roteiros</div>
-              <svg class="fill-none stroke-current stroke-2 size-6" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                class="fill-none stroke-current stroke-2 size-6"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M18 8L22 12L18 16"></path>
                 <path d="M2 12H22"></path>
               </svg>
