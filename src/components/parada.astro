@@ -48,58 +48,65 @@ const { parada, num } = Astro.props;
       <div class="flex flex-col xl:flex-row gap-6 xl:gap-20 pt-12 pb-36">
         <!-- Número -->
         <div class="w-80 pt-6">
-          <strong class="block">+ info:</strong>
-          <p>
-            {
-              parada.mais_info &&
-                parada.mais_info.map((m, i) => {
-                  return (
-                    <a
-                      href="{m.url}"
-                      class="underline ring-offset-4 block mb-3"
-                    >
-                      {m.texto}
-                    </a>
-                  );
-                })
-            }
-          </p>
+          {
+            parada.mais_info ? (
+              <div>
+                <strong class="block">+ info:</strong>
+                <p>
+                  {parada.mais_info.map((m, i) => {
+                    return (
+                      <a
+                        href={m.url}
+                        class="underline ring-offset-4 block mb-3"
+                      >
+                        {m.texto}
+                      </a>
+                    );
+                  })}
+                </p>
+              </div>
+            ) : null
+          }
         </div>
         <!-- Títular -->
         <div class="flex-1 order-first xl:order-none">
           <!-- Reproductor (si hay audio) -->
-          <div class="bg-amber-300 px-12 py-6 mt-6 mb-12">
-            <div class="flex items-center gap-6">
-              <div>
-                <svg
-                  class="fill-black stroke-black size-9"
-                  viewBox="0 0 24 24"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                </svg>
+          {
+            parada.audio ? (
+              <div class="bg-amber-300 px-12 py-6 mt-6 mb-12">
+                <div class="flex items-center gap-6">
+                  <div>
+                    <svg
+                      class="fill-black stroke-black size-9"
+                      viewBox="0 0 24 24"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polygon points="6 3 20 12 6 21 6 3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <svg
+                      class="fill-none stroke-black size-20"
+                      viewBox="0 0 24 24"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 10v3" />
+                      <path d="M6 6v11" />
+                      <path d="M10 3v18" />
+                      <path d="M14 8v7" />
+                      <path d="M18 5v13" />
+                      <path d="M22 10v3" />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="border-t-4 border-black" />
+                  </div>
+                </div>
               </div>
-              <div>
-                <svg
-                  class="fill-none stroke-black size-20"
-                  viewBox="0 0 24 24"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M2 10v3"></path>
-                  <path d="M6 6v11"></path>
-                  <path d="M10 3v18"></path>
-                  <path d="M14 8v7"></path>
-                  <path d="M18 5v13"></path>
-                  <path d="M22 10v3"></path>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <div class="border-t-4 border-black"></div>
-              </div>
-            </div>
-          </div>
+            ) : null
+          }
           <!-- Texto -->
           <div set:html={parada.texto} />
         </div>

@@ -1,64 +1,97 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { leeItems } from "../lib/ec";
+
+let colabora = await leeItems("colabora");
 ---
 
 <Layout titulo="titulo" metadescripcion="descripcion">
   <!-- hero -->
   <div class="caixa mt-36">
     <div class="text-center">
-      <h1 class="h-45">Colabora no proxecto</h1>
+      <h1 class="h-45">{colabora.titular}</h1>
       <div class="max-w-2xl mx-auto">
-        <p>
-          Camiños falados é unha plataforma para poñer en valor e difundir as memorias e lugares que conforman a identidade da Rúa, tanto da vila como das súas
-          parroquias. Participa enviando historias ou fotografías, tanto da vila como das parroquias. Tamén podes deixar o teu nome e email para que che
-          enviemos as novidades.
-        </p>
+        <div set:html={colabora.contido} />
       </div>
     </div>
-  </div>
 
-  <div class="caixa max-w-4xl bg-amber-300 py-24 mt-24">
-    <label for="x">Nome</label>
-    <input class="colabora" placeholder="O teu nome" type="text" name="nome" id="nome" />
-    <label for="x">Email</label>
-    <input class="colabora" placeholder="O teu email" type="text" name="nome" id="nome" />
-    <label for="x">Mensaxe</label>
-    <textarea class="colabora" rows="9" placeholder="Cóntanos!" name="mensaxe" id="mensaxe"></textarea>
-    <!-- adxuntar -->
-    <button class="flex items-center justify-center gap-3 p-6 mt-16 border-4 border-amber-100 w-full text-center">
-      <div>
-        <svg class="fill-none stroke-black stroke-2 size-8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M13.234 20.252 21 12.3"> </path>
-          <path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486">
-          </path>
-        </svg>
+    <div class="caixa max-w-4xl bg-amber-300 py-24 mt-24">
+      <label for="x">Nome</label>
+      <input
+        class="colabora"
+        placeholder="O teu nome"
+        type="text"
+        name="nome"
+        id="nome"
+      />
+      <label for="x">Email</label>
+      <input
+        class="colabora"
+        placeholder="O teu email"
+        type="text"
+        name="nome"
+        id="nome"
+      />
+      <label for="x">Mensaxe</label>
+      <textarea
+        class="colabora"
+        rows="9"
+        placeholder="Cóntanos!"
+        name="mensaxe"
+        id="mensaxe"></textarea>
+      <!-- adxuntar -->
+      <button
+        class="flex items-center justify-center gap-3 p-6 mt-16 border-4 border-amber-100 w-full text-center"
+      >
+        <div>
+          <svg
+            class="fill-none stroke-black stroke-2 size-8"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M13.234 20.252 21 12.3"> </path>
+            <path
+              d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>Adxuntar arquivos (opcional)</div>
+      </button>
+      <!-- Normas -->
+      <div id="normas" class="pt-12">
+        <h2>{colabora.titular_participacion}</h2>
+        <div set:html={colabora.explicacion_participacion} />
       </div>
-      <div>Adxuntar arquivos (opcional)</div>
-    </button>
-    <!-- Normas -->
-    <div id="normas" class="pt-12">
-      <h2>Normas de participación</h2>
-      <p>
-        Camiños Falados é unha plataforma promovida polo Concello da Rúa. As fotos e os datos que envíe serán analizados polo equipo do proxecto o cal
-        contactaralle para confirmar a entrada da información e, se fose necesario, contrastar detalles.
-      </p>
-      <p>
-        A información e fotografías proporcionadas poderán incorporarse a este proxecto e ser empregados noutras publicacións derivadas do mesmo. Nas
-        publicacións, sempre que sexa posible, indicarase a fonte do contido e a autoiría da imaxe. No caso de que as fotografías non teñan autor/a coñecido/a,
-        identificaranse co nome de quen a proporcione.
-      </p>
+      <!-- acordo -->
+      <label for="x" class="flex gap-3 items-center mt-16">
+        <input
+          class="size-9 border-4 border-amber-100 bg-transparent"
+          type="checkbox"
+          name="normas"
+          id="normas"
+        />
+        Lin e acepto as <a href="#normas" class="underline underline-offset-4"
+          >Normas de participación</a
+        >
+      </label>
+      <!-- acordo -->
+      <label for="x" class="flex gap-3 items-center mt-6">
+        <input
+          class="size-9 border-4 border-amber-100 bg-transparent"
+          type="checkbox"
+          name="boletin"
+          id="boletin"
+        />
+        Quero recibir novidades por email
+      </label>
+      <!-- envío -->
+      <button
+        class="bg-black p-8 text-center block w-full text-amber-100 mt-16 hover:bg-amber-900"
+        >Enviar!</button
+      >
     </div>
-    <!-- acordo -->
-    <label for="x" class="flex gap-3 items-center mt-16">
-      <input class="size-9 border-4 border-amber-100 bg-transparent" type="checkbox" name="normas" id="normas" />
-      Lin e acepto as <a href="#normas" class="underline underline-offset-4">Normas de participación</a>
-    </label>
-    <!-- acordo -->
-    <label for="x" class="flex gap-3 items-center mt-6">
-      <input class="size-9 border-4 border-amber-100 bg-transparent" type="checkbox" name="boletin" id="boletin" />
-      Quero recibir novidades por email
-    </label>
-    <!-- envío -->
-    <button class="bg-black p-8 text-center block w-full text-amber-100 mt-16 hover:bg-amber-900">Enviar!</button>
   </div>
 </Layout>
