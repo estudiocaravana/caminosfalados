@@ -15,7 +15,7 @@
   .caixa {
     @apply max-w-screen-md xl:max-w-screen-2xl mx-auto px-6 sm:px-12 xl:px-20;
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     @apply text-black font-extrabold;
   }
   .h-45 {
@@ -38,6 +38,12 @@
   }
   .dupla {
     @apply flex flex-col xl:flex-row gap-20;
+  }
+  .cuerpo h2, .cuerpo h3, .cuerpo h4 {
+    @apply block mt-12 text-amber-600;
+  }
+  .cuerpo h2 {
+    @apply text-2xl text-black;
   }
 }
 @layer components {
