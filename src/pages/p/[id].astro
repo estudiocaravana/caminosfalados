@@ -4,8 +4,6 @@ import { leeItems } from "../../lib/ec";
 export async function getStaticPaths() {
   let historias = await leeItems("historias");
 
-  console.log(historias);
-
   return historias.map((h, i) => {
     return {
       params: { id: h.id.toString() },
