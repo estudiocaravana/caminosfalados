@@ -77,22 +77,26 @@ let historia = historias[0];
   <div class="caixa mt-60 bg-black">
     <div class="dupla gap-12 xl:gap-20">
       <div class="flex-1 xl:pb-20">
-        <Image
-          src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
-          class="-mt-12"
-          alt={historia.imaxe_destacada.title}
-        />
+        <a href={`/historia/${historia.id}`}>
+          <Image
+            src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
+            class="-mt-12"
+            alt={historia.imaxe_destacada.title}
+          />
+        </a>
         <small class="text-amber-100 mt-6 block"
           >{historia.imaxe_destacada.title}</small
         >
       </div>
       <div class="flex-1">
         <div class="pb-20 xl:py-20 text-amber-100">
-          <h2
-            class="text-4xl leading-snug sm:text-5xl sm:leading-snug text-amber-100"
-          >
-            {historia.titular}
-          </h2>
+          <a href={`/historia/${historia.id}`}>
+            <h2
+              class="text-4xl leading-snug sm:text-5xl sm:leading-snug text-amber-100"
+            >
+              {historia.titular}
+            </h2>
+          </a>
           <div set:html={historia.destacado} />
         </div>
         <a
@@ -120,11 +124,13 @@ let historia = historias[0];
       <!-- Presentación -->
       <div class="flex-1">
         <div>
-          <h1
-            class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl"
-          >
-            Roteiros
-          </h1>
+          <a href="/roteiros">
+            <h1
+              class="text-3xl leading-snug sm:text-5xl sm:leading-snug max-w-xl"
+            >
+              Roteiros
+            </h1>
+          </a>
 
           <div set:html={portada.explicacion_roteiros} />
 
@@ -150,7 +156,9 @@ let historia = historias[0];
       <!-- Imagen -->
       <div class="flex-1 order-first xl:order-none">
         <div class="relative my-12 overflow-hidden bg-amber-300 p-3">
-          <img src="/mapa.webp" alt="" />
+          <a href="/roteiros">
+            <img src="/mapa.webp" alt="" />
+          </a>
         </div>
       </div>
     </div>
