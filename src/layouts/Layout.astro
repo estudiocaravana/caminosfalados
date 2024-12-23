@@ -10,8 +10,10 @@ import Footer from "../components/footer.astro";
 interface Props {
   titulo: string;
   metadescripcion: string;
+  // Imagen opcional
+  imagen?: string;
 }
-const { titulo, metadescripcion } = Astro.props;
+const { titulo, metadescripcion, imagen } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,6 +25,11 @@ const { titulo, metadescripcion } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{titulo} | Camiños falados da Rúa</title>
     <meta name="description" content={metadescripcion} />
+
+    <meta property="og:title" content={`${titulo} | Camiños falados da Rúa`} />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content={metadescripcion} />
+    {imagen && <meta property="og:image" content={imagen} />}
 
     <script>
       ((g) => {
