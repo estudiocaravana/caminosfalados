@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { leeItems } from "../lib/ec";
+
+let exito = await leeItems("exito");
 ---
 
-<Layout titulo="titulo" metadescripcion="descripcion">
+<Layout titulo={exito.titular} metadescripcion={exito.descricion_seo}>
   <!-- hero -->
   <div class="caixa max-w-5xl mt-36">
-    <h1 class="h-45">Mensaxe enviado con éxito</h1>
+    <h1 class="h-45">{exito.titular}</h1>
+    <!-- Directus bloque -->
+    <div class="cuerpo" set:html={exito.contido} />
   </div>
 </Layout>
