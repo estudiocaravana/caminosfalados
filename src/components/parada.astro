@@ -53,7 +53,7 @@ const { parada, num } = Astro.props;
         <div class="w-80 pt-6">
           {
             parada.mais_info ? (
-              <div>
+              <div class="pb-6">
                 <strong class="block">+ info:</strong>
                 <p>
                   {parada.mais_info.map((m, i) => {
@@ -70,6 +70,19 @@ const { parada, num } = Astro.props;
               </div>
             ) : null
           }
+
+          <div>
+            <div>
+              <strong class="block">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${parada.coordenadas.coordinates[1]}%2C${parada.coordenadas.coordinates[0]}`}
+                  class="underline ring-offset-4 block mb-3"
+                >
+                  Ir no mapa
+                </a>
+              </strong>
+            </div>
+          </div>
         </div>
         <!-- Títular -->
         <div class="flex-1 order-first xl:order-none">
