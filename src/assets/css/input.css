@@ -48,6 +48,9 @@
   .cuerpo h2 {
     @apply text-2xl text-black;
   }
+  figure figcaption {
+    @apply text-sm pt-3 pb-4;
+  }
 }
 @layer components {
     .swiper-button-next::after {
