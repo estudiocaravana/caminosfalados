@@ -67,14 +67,22 @@ const { historia } = Astro.props;
             </div>
           ) : null
         }
-        <strong class="block mt-12">Ligazóns:</strong>
-        <p>
-          <a href="#" class="underline ring-offset-4 block mb-3"
-            >Lorem ipsum dolor sit amet</a
-          >
-          <a href="#" class="underline ring-offset-4 block mb-3">Odit numquam</a
-          >
-        </p>
+        {
+          historia.ligazons ? (
+            <div>
+              <strong class="block mt-12">Ligazóns:</strong>
+              <p>
+                {historia.ligazons.map((l, i) => {
+                  return (
+                    <a href={l.url} class="underline ring-offset-4 block mb-3">
+                      {l.texto}
+                    </a>
+                  );
+                })}
+              </p>
+            </div>
+          ) : null
+        }
       </div>
       <!-- Principal -->
       <div class="flex-1 order-first xl:order-none">
