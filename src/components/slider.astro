@@ -11,13 +11,11 @@ const { galeria } = Astro.props;
 <div>
   <div class="swiper">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper items-stretch">
       <!-- Slides -->
       {
         galeria.map((g, i) => {
-          const url =
-            "http://panel.camiñosfaladosdarua.gal/assets/" +
-            g.directus_files_id.id;
+          const url = "http://panel.camiñosfaladosdarua.gal/assets/" + g.directus_files_id.id;
           return (
             <div class="swiper-slide">
               <div>
