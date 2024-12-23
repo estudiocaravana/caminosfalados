@@ -16,7 +16,13 @@ let colabora = await leeItems("colabora");
       </div>
     </div>
 
-    <form name="contacto" netlify method="POST" action="/exito">
+    <form
+      name="contacto"
+      netlify
+      netlify-honeypot="bot-field"
+      method="POST"
+      action="/exito"
+    >
       <div class="caixa max-w-4xl bg-amber-300 py-24 mt-24">
         <p class="hidden">
           <label>
