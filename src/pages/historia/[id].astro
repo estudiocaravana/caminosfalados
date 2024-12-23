@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import { htmlToText } from "html-to-text";
 
 import { leeItems } from "../../lib/ec";
 
@@ -16,12 +17,13 @@ export async function getStaticPaths() {
 }
 
 const { historia } = Astro.props;
+
+const destacadoSinHTML = htmlToText(historia.destacado);
 ---
 
 <Layout
   titulo={historia.titular}
-  metadescripcion={historia.descricion_seo ||
-    historia.destacado.replace(/<[^>]*>?/g, "")}
+  metadescripcion={historia.descricion_seo || destacadoSinHTML}
   imagen={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
 >
   <!-- migas -->
