@@ -35,4 +35,9 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true,
   }),
+  redirects: {
+    // TODO Eliminar estas redirecciones cuando hayamos hecho los categories de todo
+    "/historias": "/historia/1",
+    "/roteiros": "/roteiro/2",
+  },
 });
