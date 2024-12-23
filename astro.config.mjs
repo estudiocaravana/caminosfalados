@@ -40,5 +40,6 @@ export default defineConfig({
     "/historias": "/historia/1",
     "/historia/1": "/historia/noiteboa-1924-unha-muineira-para-ruth",
     "/roteiros": "/roteiro/2",
+    "/roteiro/2": "/roteiro/ruth-na-rua",
   },
 });
