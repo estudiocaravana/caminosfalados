@@ -8,13 +8,12 @@ const { parada, num } = Astro.props;
 ---
 
 <div class="caixa" id={`parada-${num}`}>
-  <div
-    class="border-t-4 border-black"
-    x-data="{ expanded: false }"
-    @click="expanded = ! expanded"
-  >
+  <div class="border-t-4 border-black" x-data="{ expanded: false }">
     <!-- Banda -->
-    <div class="flex gap-6 xl:gap-20 py-12 items-center">
+    <div
+      class="flex gap-6 xl:gap-20 py-12 items-center"
+      @click="expanded = ! expanded"
+    >
       <!-- Número -->
       <div class="xl:w-80 cursor-pointer">
         <div
