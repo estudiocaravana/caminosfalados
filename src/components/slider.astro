@@ -1,5 +1,6 @@
 ---
 import "swiper/css";
+import { Image } from "astro:assets";
 
 interface Props {
   galeria: number[];
@@ -20,7 +21,7 @@ const { galeria } = Astro.props;
           return (
             <div class="swiper-slide">
               <div>
-                <img src={url} alt="Muller sobre fondo" />
+                <Image src={url} alt="Muller sobre fondo" />
                 {/* <small>Muller sobre fondo!</small> */}
               </div>
             </div>
