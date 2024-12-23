@@ -79,7 +79,7 @@ console.log(historia);
   <div class="caixa mt-60 bg-black">
     <div class="dupla gap-12 xl:gap-20">
       <div class="flex-1 xl:pb-20">
-        <a href={`/historia/${historia.id}`}>
+        <a href={`/historia/${historia.slug}`}>
           <Image
             src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
             class="-mt-12"
@@ -90,7 +90,7 @@ console.log(historia);
       </div>
       <div class="flex-1">
         <div class="pb-20 xl:py-20 text-amber-100">
-          <a href={`/historia/${historia.id}`}>
+          <a href={`/historia/${historia.slug}`}>
             <h2
               class="text-4xl leading-snug sm:text-5xl sm:leading-snug text-amber-100"
             >
@@ -100,7 +100,7 @@ console.log(historia);
           <div set:html={historia.destacado} />
         </div>
         <a
-          href={`/historia/${historia.id}`}
+          href={`/historia/${historia.slug}`}
           class="px-20 bg-amber-300 py-12 flex gap-3 hover:gap-6 items-center"
         >
           <div>Seguir lendo</div>
