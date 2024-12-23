@@ -5,7 +5,8 @@ const obtenItems = async (nombreItems: string) => {
         console.log("--------------------------------");
         console.log("Obteniendo items de tipo " + nombreItems + "...");
         console.log("--------------------------------");
-        const result = await fetch(`${URL_DIRECTUS}/items/${nombreItems}?fields=*.*.*`, {
+        // Por ahora ponemos un fields=*.* por cada nivel que queramos bajar
+        const result = await fetch(`${URL_DIRECTUS}/items/${nombreItems}?fields=*.*.*.*`, {
             method: "GET",
             headers: {
             "Content-Type": "application/json",

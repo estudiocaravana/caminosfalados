@@ -17,12 +17,12 @@ const { galeria } = Astro.props;
         galeria.map((g, i) => {
           const url =
             "http://panel.camiñosfaladosdarua.gal/assets/" +
-            g.directus_files_id;
+            g.directus_files_id.id;
           return (
             <div class="swiper-slide">
               <div>
-                <Image src={url} alt="Muller sobre fondo" />
-                {/* <small>Muller sobre fondo!</small> */}
+                <Image src={url} alt={g.directus_files_id.title} />
+                <small>{g.directus_files_id.title}</small>
               </div>
             </div>
           );
