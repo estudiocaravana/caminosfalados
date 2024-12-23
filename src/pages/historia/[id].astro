@@ -20,7 +20,8 @@ const { historia } = Astro.props;
 
 <Layout
   titulo={historia.titular}
-  metadescripcion="descripcion"
+  metadescripcion={historia.descricion_seo ||
+    historia.destacado.replace(/<[^>]*>?/g, "")}
   imagen={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
 >
   <!-- migas -->
