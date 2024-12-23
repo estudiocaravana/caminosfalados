@@ -1,3 +1,13 @@
+# Cómo funciona
+
+Este proyecto está hecho con Astro, Netlify y Directus.
+
+Con **Astro** maquetamos la web.
+
+**Directus** sirve como CMS para el contenido. Nos gusta mucho cómo está diseñado su panel y es muy configurable. Está instalado dentro de un contenedor Docker en un servidor de Digital Ocean.
+
+**Netlify** se encarga de hacer el build de la web y de servirla como estática en producción. También nos permite recibir formularios de contacto.
+
 # Trabajar en local
 
 La primera vez, ejecutar
