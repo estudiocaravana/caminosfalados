@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 const { historia } = Astro.props;
 ---
 
-<Layout titulo="titulo" metadescripcion="descripcion">
+<Layout titulo={historia.titular} metadescripcion="descripcion">
   <!-- migas -->
   <div class="caixa mt-12">
     <ul class="flex gap-1">

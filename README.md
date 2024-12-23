@@ -49,3 +49,9 @@ https://www.netlify.com/blog/deploy-an-astro-site-with-forms-serverless-function
 https://www.netlify.com/blog/2021/07/23/build-a-modern-shopping-site-with-astro-and-serverless-functions/
 
 https://docs.directus.io/guides/headless-cms/trigger-static-builds/netlify.html#triggering-static-site-builds-with-netlify
+
+Para hacer que las imágenes vayan también al servidor de Netlify  
+https://docs.netlify.com/image-cdn/overview/#remote-path
+
+Ante problemas con el envío de formularios  
+https://answers.netlify.com/t/support-guide-form-problems-form-debugging-404-when-submitting/92

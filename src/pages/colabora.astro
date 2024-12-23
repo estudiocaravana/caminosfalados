@@ -6,7 +6,7 @@ import { leeItems } from "../lib/ec";
 let colabora = await leeItems("colabora");
 ---
 
-<Layout titulo="titulo" metadescripcion="descripcion">
+<Layout titulo={colabora.titular} metadescripcion={colabora.descricion_seo}>
   <!-- hero -->
   <div class="caixa mt-36" x-data="{ arquivo: $refs.arquivo }">
     <div class="text-center">

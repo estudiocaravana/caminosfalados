@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 const { roteiro } = Astro.props;
 ---
 
-<Layout titulo="titulo" metadescripcion="descripcion">
+<Layout titulo={roteiro.nome} metadescripcion={roteiro.descricion_seo}>
   <!-- Selector de roteiro -->
   <div class="caixa">
     <div class="flex *:flex-1 text-center">
