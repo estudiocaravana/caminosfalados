@@ -55,3 +55,6 @@ https://docs.netlify.com/image-cdn/overview/#remote-path
 
 Ante problemas con el envío de formularios  
 https://answers.netlify.com/t/support-guide-form-problems-form-debugging-404-when-submitting/92
+
+Redirecciones a otras páginas  
+https://docs.astro.build/es/guides/routing/#redirecciones

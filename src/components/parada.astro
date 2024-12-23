@@ -7,12 +7,16 @@ interface Props {
 const { parada, num } = Astro.props;
 ---
 
-<div class="caixa">
-  <div class="border-t-4 border-black" x-data="{ expanded: false }">
+<div class="caixa" id={`parada-${num}`}>
+  <div
+    class="border-t-4 border-black"
+    x-data="{ expanded: false }"
+    @click="expanded = ! expanded"
+  >
     <!-- Banda -->
     <div class="flex gap-6 xl:gap-20 py-12 items-center">
       <!-- Número -->
-      <div class="xl:w-80 cursor-pointer" @click="expanded = ! expanded">
+      <div class="xl:w-80 cursor-pointer">
         <div
           class="size-12 rounded-full bg-amber-300 flex items-center justify-center ml-auto"
         >
@@ -20,11 +24,11 @@ const { parada, num } = Astro.props;
         </div>
       </div>
       <!-- Títular -->
-      <div class="flex-1 cursor-pointer" @click="expanded = ! expanded">
+      <div class="flex-1 cursor-pointer">
         <h2 class="text-xl sm:text-2xl xl:text-3xl">{parada.titular}</h2>
       </div>
       <div>
-        <button @click="expanded = ! expanded">
+        <button>
           <svg
             class="fill-none stroke-black stroke-2 size-9"
             viewBox="0 0 24 24"

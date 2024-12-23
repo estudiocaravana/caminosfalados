@@ -105,6 +105,10 @@ const { roteiro } = Astro.props;
         content: marcador,
       });
 
+      marker.addListener("click", () => {
+        window.location.href = `#parada-${i + 1}`;
+      });
+
       bounds.extend({
         lat: p.coordenadas.coordinates[1],
         lng: p.coordenadas.coordinates[0],
