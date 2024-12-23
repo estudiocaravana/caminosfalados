@@ -24,30 +24,24 @@ const { roteiro } = Astro.props;
     <div class="flex *:flex-1 text-center">
       <div class="border-b-4 border-black py-12 relative">
         <a href="#" class="font-bold text-black">{roteiro.nome}</a>
-        <div
-          class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 size-3 bg-black rounded-full"
-        >
-        </div>
+        <div class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 size-3 bg-black rounded-full"></div>
       </div>
       <div class="border-b-4 border-black py-12 relative">
         <a href="#" class="text-amber-600">Roteiro*</a>
-        <div
-          class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 size-3 border border-amber-800 rounded-full"
-        >
-        </div>
+        <div class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 size-3 border border-amber-800 rounded-full"></div>
       </div>
     </div>
   </div>
   <!-- hero roteiro -->
   <div class="caixa">
     <div class="flex flex-col xl:flex-row items-center gap-6 xl:gap-20">
-      <div class="flex-1">
+      <div class="xl:flex-1">
         <h1 class="h-45 mt-20 xl:mt-0">{roteiro.nome}</h1>
         <div set:html={roteiro.descricion} />
       </div>
-      <div class="flex-1">
-        <div class="relative my-12 overflow-hidden bg-amber-300 p-3">
-          <div id="map" style="height: 500px;"></div>
+      <div class="xl:flex-1">
+        <div class="relative my-12 bg-amber-300 p-3">
+          <div id="map" class="aspect-square w-96 sm:w-[640px]"></div>
         </div>
       </div>
     </div>
@@ -61,10 +55,7 @@ const { roteiro } = Astro.props;
   <!-- Colabora -->
   <div class="caixa">
     <div class="border-t-4 border-black py-12">
-      Tes algunha parada máis en mente? <a
-        href="/colabora"
-        class="font-bold underline underline-offset-4">Colabora</a
-      >
+      Tes algunha parada máis en mente? <a href="/colabora" class="font-bold underline underline-offset-4">Colabora</a>
     </div>
   </div>
 </Layout>
@@ -91,8 +82,7 @@ const { roteiro } = Astro.props;
     paradasMap.forEach((p, i) => {
       const marcador = document.createElement("div");
 
-      marcador.className =
-        "size-6 rounded-full bg-amber-300 flex items-center justify-center ml-auto text-xs font-extrabold";
+      marcador.className = "size-6 rounded-full bg-amber-300 flex items-center justify-center ml-auto text-xs font-extrabold";
       marcador.textContent = i + 1;
 
       let marker = new AdvancedMarkerElement({
