@@ -18,10 +18,20 @@ let colabora = await leeItems("colabora");
 
     <form
       id="contacto"
-      action="http://panel.camiñosfaladosdarua.gal/items/contactos"
+      netlify
+      data-netlify="true"
+      netlify-honeypot
+      action="/exito"
       method="post"
     >
       <div class="caixa max-w-4xl bg-amber-300 py-24 mt-24">
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
+        <input type="hidden" name="form-name" value="feedback" />
+
         <label for="nome">Nome</label>
         <input
           class="colabora"
@@ -102,24 +112,3 @@ let colabora = await leeItems("colabora");
     </form>
   </div>
 </Layout>
-
-<script>
-  document.getElementById("contacto").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.status === "success") {
-          alert("Mensaxe enviado con éxito");
-          form.reset();
-        } else {
-          alert("Houbo un erro. Por favor, inténtao de novo");
-        }
-      });
-  });
-</script>
