@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { leeItems } from "../lib/ec";
+
+interface Props {
+  nomePaxina: string;
+}
+const { nomePaxina } = Astro.props;
+
+let paxina = await leeItems(nomePaxina);
+---
+
+<Layout titulo={paxina.titular} metadescripcion={paxina.descricion_seo}>
+  <!-- hero -->
+  <div class="caixa max-w-5xl mt-36">
+    <h1 class="h-45">{paxina.titular}</h1>
+    <!-- Directus bloque -->
+    <div class="cuerpo" set:html={paxina.contido} />
+  </div>
+</Layout>

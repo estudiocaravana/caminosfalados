@@ -6,8 +6,6 @@ import { leeItems } from "../lib/ec";
 let portada = await leeItems("portada");
 let historias = await leeItems("historias");
 let historia = historias[0];
-
-console.log(historia);
 ---
 
 <Layout titulo="Portada" metadescripcion={portada.descricion_seo}>

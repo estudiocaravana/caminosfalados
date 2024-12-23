@@ -42,15 +42,19 @@ netlify deploy
 netlify deploy --prod
 ```
 
+Esto provoca también que se regenere la web en Netlify.
+
 # Artículos interesantes
 
+Cómo hacer webs con Astro y Netlify  
 https://www.netlify.com/blog/deploy-an-astro-site-with-forms-serverless-functions-and-redirects/
-
 https://www.netlify.com/blog/2021/07/23/build-a-modern-shopping-site-with-astro-and-serverless-functions/
 
+Regenerar la web en Netlify tras cambios en Directus  
 https://docs.directus.io/guides/headless-cms/trigger-static-builds/netlify.html#triggering-static-site-builds-with-netlify
 
-Para hacer que las imágenes vayan también al servidor de Netlify  
+Para hacer que las imágenes vayan también al servidor de Netlify.  
+Hay que usar el componente `Image` de Astro.  
 https://docs.netlify.com/image-cdn/overview/#remote-path
 
 Ante problemas con el envío de formularios  
@@ -58,3 +62,7 @@ https://answers.netlify.com/t/support-guide-form-problems-form-debugging-404-whe
 
 Redirecciones a otras páginas  
 https://docs.astro.build/es/guides/routing/#redirecciones
+
+# TODO
+
+Hacer que Directus calcule automáticamente el slug a partir del título de las historias y los roteiros

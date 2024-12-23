@@ -1,19 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-import { leeItems } from "../lib/ec";
-
-let aviso_legal = await leeItems("aviso_legal");
+import Paxina from "../components/paxina.astro";
 ---
 
-<Layout
-  titulo={aviso_legal.titular}
-  metadescripcion={aviso_legal.descricion_seo}
->
-  <!-- hero -->
-  <div class="caixa max-w-5xl mt-36">
-    <h1 class="h-45">{aviso_legal.titular}</h1>
-    <!-- Directus bloque -->
-    <div class="cuerpo" set:html={aviso_legal.contido} />
-  </div>
-</Layout>
+<Paxina nomePaxina="aviso_legal" />

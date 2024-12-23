@@ -1,19 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-import { leeItems } from "../lib/ec";
-
-let politica_privacidade = await leeItems("politica_privacidade");
+import Paxina from "../components/paxina.astro";
 ---
 
-<Layout
-  titulo={politica_privacidade.titular}
-  metadescripcion={politica_privacidade.descricion_seo}
->
-  <!-- hero -->
-  <div class="caixa max-w-5xl mt-36">
-    <h1 class="h-45">{politica_privacidade.titular}</h1>
-    <!-- Directus bloque -->
-    <div class="cuerpo" set:html={politica_privacidade.contido} />
-  </div>
-</Layout>
+<Paxina nomePaxina="politica_privacidade" />

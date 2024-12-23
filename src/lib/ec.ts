@@ -1,11 +1,18 @@
 const URL_DIRECTUS = 'http://panel.camiñosfaladosdarua.gal';
 
+/**
+ * Obtiene los items de un tipo de contenido del panel en Directus
+ * 
+ * @param nombreItems Nombre del tipo de contenido
+ * @returns Items del tipo de contenido
+ */
 const obtenItems = async (nombreItems: string) => {
     try {
         console.log("--------------------------------");
         console.log("Obteniendo items de tipo " + nombreItems + "...");
         console.log("--------------------------------");
         // Por ahora ponemos un fields=*.* por cada nivel que queramos bajar
+        // TODO Hacer que no sea necesario poner tantos *.* y que se pueda bajar todo el árbol de una vez
         const result = await fetch(`${URL_DIRECTUS}/items/${nombreItems}?fields=*.*.*.*`, {
             method: "GET",
             headers: {
@@ -25,6 +32,12 @@ const obtenItems = async (nombreItems: string) => {
     }
 };
 
+/**
+ * Lee los items de un tipo de contenido de la versión compilada en Netlify
+ * 
+ * @param nombreItems Nombre del tipo de contenido
+ * @returns Datos de los items
+ */
 const leeItems = (nombreItems: string) => {
     const URL = process.env.NETLIFY ? process.env.URL : "http://localhost:8888";
 
