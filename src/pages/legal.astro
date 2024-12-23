@@ -1,32 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { leeItems } from "../lib/ec";
+
+let aviso_legal = await leeItems("aviso_legal");
 ---
 
-<Layout titulo="titulo" metadescripcion="descripcion">
+<Layout
+  titulo={aviso_legal.titular}
+  metadescripcion={aviso_legal.descricion_seo}
+>
   <!-- hero -->
   <div class="caixa max-w-5xl mt-36">
-    <h1 class="h-45">Termos Legais</h1>
+    <h1 class="h-45">{aviso_legal.titular}</h1>
     <!-- Directus bloque -->
-    <div class="cuerpo">
-      <h2>Un dos</h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, ipsam sapiente nesciunt illum commodi dolorum quas quibusdam porro vel beatae
-        necessitatibus dolorem quam consequatur aliquid sit possimus, eveniet maxime eligendi!
-      </p>
-      <p>
-        Benvidas, benvidos e benvides ao paseo Ruth e o Leviatán, organizado polo Concello de Santiago con motivo dos cen anos da primeira visita da fotógrafa
-        norteamericana Ruth Matilda Anderson á Galiza e a Compostela.
-      </p>
-      <h3>Un tres</h3>
-      <p>
-        Benvidas, benvidos e benvides ao paseo Ruth e o Leviatán, organizado polo Concello de Santiago con motivo dos cen anos da primeira visita da fotógrafa
-        norteamericana Ruth Matilda Anderson á Galiza e a Compostela.
-      </p>
-      <h4>Un cuatro</h4>
-      <p>
-        Benvidas, benvidos e benvides ao paseo Ruth e o Leviatán, organizado polo Concello de Santiago con motivo dos cen anos da primeira visita da fotógrafa
-        norteamericana Ruth Matilda Anderson á Galiza e a Compostela.
-      </p>
-    </div>
+    <div class="cuerpo" set:html={aviso_legal.contido} />
   </div>
 </Layout>
