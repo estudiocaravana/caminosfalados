@@ -33,7 +33,14 @@ const ogImageURL = imagen ? await getImage({ src: imagen }) : null;
     <meta property="og:title" content={`${titulo} | Camiños falados da Rúa`} />
     <meta property="og:type" content="article" />
     <meta property="og:description" content={metadescripcion} />
-    {ogImageURL && <meta property="og:image" content={ogImageURL.src} />}
+    {
+      ogImageURL && (
+        <meta
+          property="og:image"
+          content={`https://camiñosfaladosdarua.gal${ogImageURL.src}`}
+        />
+      )
+    }
 
     <script>
       ((g) => {
