@@ -8,7 +8,7 @@ let colabora = await leeItems("colabora");
 
 <Layout titulo="titulo" metadescripcion="descripcion">
   <!-- hero -->
-  <div class="caixa mt-36">
+  <div class="caixa mt-36" x-data="{ arquivo: $refs.arquivo }">
     <div class="text-center">
       <h1 class="h-45">{colabora.titular}</h1>
       <div class="max-w-2xl mx-auto">
@@ -54,7 +54,10 @@ let colabora = await leeItems("colabora");
           name="mensaxe"
           id="mensaxe"></textarea>
         <!-- adxuntar -->
+
         <button
+          type="button"
+          @click="arquivo.click()"
           class="flex items-center justify-center gap-3 p-6 mt-16 border-4 border-amber-100 w-full text-center"
         >
           <div>
@@ -73,6 +76,7 @@ let colabora = await leeItems("colabora");
           </div>
           <div>Adxuntar arquivos (opcional)</div>
         </button>
+        <input type="file" name="arquivo" x-ref="arquivo" class="hidden" />
         <!-- Normas -->
         <div id="normas" class="pt-12">
           <h2>{colabora.titular_participacion}</h2>
