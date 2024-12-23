@@ -42,7 +42,7 @@ const leeItems = (nombreItems: string) => {
     const URL = process.env.NETLIFY ? process.env.URL : "http://localhost:8888";
 
     return fetch(
-        `${URL}/.netlify/functions/${nombreItems}`
+        `${URL}/.netlify/functions/obten_coleccion?coleccion=${nombreItems}`
     ).then((res) => res.json());
 };
 
