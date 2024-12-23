@@ -2,4 +2,4 @@
   command = "npm run build"
   publish = "dist"
 [images]
-  remote_images = ["http://panel.camiñosfaladosdarua.gal/.*"]
+  remote_images = ["http://panel.camiñosfaladosdarua.gal/.*", "http://panel.cami%C3%B1osfaladosdarua.gal/.*"]
