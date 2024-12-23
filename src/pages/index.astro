@@ -6,6 +6,8 @@ import { leeItems } from "../lib/ec";
 let portada = await leeItems("portada");
 let historias = await leeItems("historias");
 let historia = historias[0];
+
+console.log(historia);
 ---
 
 <Layout titulo="Portada" metadescripcion={portada.descricion_seo}>
@@ -81,12 +83,10 @@ let historia = historias[0];
           <Image
             src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
             class="-mt-12"
-            alt={historia.imaxe_destacada.title}
+            alt={historia.pe_de_foto || "Historia"}
           />
         </a>
-        <small class="text-amber-100 mt-6 block"
-          >{historia.imaxe_destacada.title}</small
-        >
+        <small class="text-amber-100 mt-6 block">{historia.pe_de_foto}</small>
       </div>
       <div class="flex-1">
         <div class="pb-20 xl:py-20 text-amber-100">

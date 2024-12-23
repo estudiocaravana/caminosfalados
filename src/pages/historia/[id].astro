@@ -36,10 +36,10 @@ const { historia } = Astro.props;
         <Image
           src={`http://panel.camiñosfaladosdarua.gal/assets/${historia.imaxe_destacada.id}`}
           class="block -mt-12"
-          alt={historia.imaxe_destacada.title}
+          alt={historia.pe_de_foto || "Historia"}
         />
         <small class="pt-5 pb-6 xl:pt-4 xl:pb-12 block text-black"
-          >{historia.imaxe_destacada.title}</small
+          >{historia.pe_de_foto}</small
         >
       </div>
     </div>
